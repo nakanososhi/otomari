@@ -1,0 +1,184 @@
+.header {
+  width: 100%;
+  height: 70px;
+  padding: 4px 30px;
+  background-color: #000000;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.header-left-nav {
+  float: left;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.header-left-nav form {
+  display: inline-block;
+}
+
+.header-sharch {
+  position: relative;
+}
+
+.d-none {
+  display: none;
+}
+
+@media screen and (min-width:992px) {
+  .d-lg-inline-block {
+    display: inline-block;
+  }
+}
+
+.header-left-nav .form-control {
+  width: 180px;
+  display: inline-block;
+  position: relative;
+  border-radius: 2px;
+  padding-left: 30px;
+}
+
+.form-control {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.fa-map-marker-alt {
+  content: "";
+    /* 疑似要素に必須 */
+    width: 16px;
+    /* アイコンの横幅 */
+    height: 16px;
+    /* アイコンの高さ */
+    background: url(./icon.png) no-repeat center center / auto 100%;
+    /* 背景にアイコン画像を配置 */
+    display: inline-block;
+    /* 高さを持たせるためにインラインブロック要素にする */
+    position: absolute;
+    /* 相対位置に指定 */
+    top: 4px;
+    /* アイコンの位置。微調整してね */
+    left: 5px;
+}
+
+.header i {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  font-size: 18px;
+}
+
+.fa, .fas {
+  font-weight: 900;
+}
+
+.fa, .far, .fas {
+  font-family:  "Font Awesome5 Free";
+}
+
+.header-sharch {
+  position: relative;
+}
+
+// .fa-map-marker-alt:before {
+//   content: "/f3c5";
+// }
+
+// ::before {
+//   box-sizing: border-box;
+// }
+
+// .fa-serch:before {
+//   content: ;
+// }
+
+.header-right-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+  height: 54px;
+  padding-right: 30px;
+  vertical-align: middle;
+}
+
+.nav-item {
+  display: inline-block;
+  color: #fff;
+  font-size: 16px;
+
+}
+
+.btn-primary {
+  background-color: #4a90e2 !important;
+  text-decoration: none;
+  color: #fff;
+}
+
+// .ml-3, .mx-3 {
+//   margin-right: 1rem !important;
+// }
+
+// .mr-3, .mx-3 {
+//   margin-right: 1rem !important;
+// }
+
+// .mb-2, .my-2 {
+//   margin-bottom: 0.5rem !important;
+// }
+
+// .mt-2, .my-2 {
+//   margin-top: 0.5rem !important;
+// }
+
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  text-decoration: none;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 180px;
+  margin-top: 64px;
+  padding-top: 90px;
+  background-color: #111;
+  box-sizing: border-box;
+  color: #fff;
+  text-align: center;
+}
