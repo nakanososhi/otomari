@@ -10,40 +10,72 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
-    <header class="header">
-     <div class="header-inner">
-       <div class="header-left-nav">
-         <a href="http://[::1]:3000/">
-           <img alt ="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" alt="">
-         </a>
-        <form action="https://presite-potepancamp-rails-02.herokuapp.com/  rooms/search" accept-charset="UTF-8" method="get">
-          <div class="header-sharch d-lg-inline-block d-none">
-            <input type="text" name="area" id="area" value="" class="form-control" placeholder="エリア">
-            <i class="fas fa-map-marker-alt"><img src="https://everydayicons.jp/wp/wp-content/themes/everydayicons/icons/thumbs/ei-search.png" width="20px" height="20px"></i>
+    <div class="wrap">
+      <header class="header">
+        <div class="header-inner">
+          <div class="header-left-nav">
+            <a href="http://[::1]:3000/">
+              <img alt ="サイトのロゴ画像" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png" alt="">
+            </a>
+            <form action="https://presite-potepancamp-rails-02.herokuapp.com/  rooms/search" accept-charset="UTF-8" method="get">
+              <div class="header-sharch d-lg-inline-block d-none">
+                <input type="text" name="area" id="area" value="" class="form-control" placeholder="エリア">
+                <i class="fas fa-map-marker-alt"><img src="https://everydayicons.jp/wp/wp-content/themes/everydayicons/icons/thumbs/ei-search.png" width="20px" height="20px"></i>
+              </div>
+              <div class="header-sharch d-lg-inline-block d-none">
+                <input type="text" name="keyword" id="keyword" value="" class="form-control" placeholder="キーワード">
+                <i class="fas fa-search"><img src="https://everydayicons.jp/wp/wp-content/themes/everydayicons/icons/thumbs/ei-search.png" width="20px" height="20px"></i>
+              </div>
+              <input type="submit" name="commit" value="" class="d-none" data-disable-with="">
+            </form>
           </div>
-          <div class="header-sharch d-lg-inline-block d-none">
-            <input type="text" name="keyword" id="keyword" value="" class="form-control" placeholder="キーワード">
-            <i class="fas fa-search"><img src="https://everydayicons.jp/wp/wp-content/themes/everydayicons/icons/thumbs/ei-search.png" width="20px" height="20px"></i>
-          </div>
-          <input type="submit" name="commit" value="" class="d-none" data-disable-with="">
-        </form>
-       </div>
 
-       <div class="header-right-nav">
-         <div class="nav-item">
-           <a href="/users/sign_in" class="btn btn-primary my-2 mx-3">ログイン</a>
-           <a href="/users/sign_up" class="btn btn-secondary">登録する</a>
-         </div>
-       </div>
-     </div>
-    </header>
-    <%= yield %>
+          <% if user_signed_in? %>
 
-    <footer class="footer">
-      <p>©︎ 2020 POTEPAN.INC.</p>
-    </footer>
+            < class="header-right-nav">
+              <div class="nav-item d-sm-inline-block d-none">
+                <%= current_user.name %>
+              </div>
 
+                <label for="menu"><%= current_user.name %></label>
+                <input type="checkbox" id ="menu">
+                <ul class="dropdown">
+                  <li>ルーム登録</li>
+                  <li>予約済みルーム一覧</li>
+                  <li>登録済みルーム一覧</li>
+                  <li>設定</li>
+                  <li><%= link_to "ログアウト" , destroy_user_session_path, method: :delete %></li>
+                </ul>
 
+              <!-- <div class="wrap">
+                <label for="label1"><%= current_user.name %></label>
+                <input type="checkbox" id ="label1" class ="switch" />
+                <div class="content">
+                  <p>こんにちは</p>
+                </div>
+
+              </div> -->
+
+            </div>
+
+          <% else %>
+            <div class="header-right-nav">
+              <div class="nav-item">
+                <a href="/users/sign_in" class="btn btn-primary my-2 mx-3">ログイン</a>
+                <a href="/users/sign_up" class="btn btn-secondary">登録する</a>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </header>
+
+      <%= yield %>
+
+      <!-- <footer class="footer">
+        <p>©︎ 2020 POTEPAN.INC.</p>
+      </footer> -->
+    </div>
   </body>
 </html>

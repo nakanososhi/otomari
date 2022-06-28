@@ -1,19 +1,63 @@
-<h1>ログインアプリ</h1>
+<div class="top">
+  <div class="top-main">
+    <div class="container">
+      <div class="row col-lg-6">
+        <div class="form-fream">
+          <div class="form-area">
+            <p class="form-area-title mb-4">
+              Potepan Shareでまだ体験したことのない旅をしよう
+            </p>
+            <form action="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search" accept-charset="UTF-8" method="get">
+              <label for="____">エリア</label>
+              <input type="text" name="area" id="area" value class="form-control mb-4" placeholder="東京">
+              <input type="submit" name="commit" value="探す" class="form-control btn-primary mb-4" data-disable-with="探す">
 
-<% if user_signed_in? %>
-  <!-- ユーザーがログインしているか調べる -->
-  <!-- ユーザーがログインしていた時の処理 -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="panel-area m-5">
+      <h1 class="section-title">
+            おすすめエリア
+          </h1>
+      <div class="row">
+        <div class="panel-item col-lg3 col-6">
+          <span>東京</span>
+          <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E6%9D%B1%E4%BA%AC">
+            <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg" alt="" class="panel-image">
+          </a>
+            <div class="shadow"></div>
+        </div>
 
-  <h2>現在<%=current_user.name %>　さんがログインしています   </h2>
+        <div class="panel-item col-lg3 col-6">
+          <span>大阪</span>
+          <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E5%A4%A7%E9%98%AA">
+            <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_osaka.jpg" alt="" class="panel-image">
+          </a>
+            <div class="shadow"></div>
+        </div>
 
-  <h4> メールアドレス： <%= current_user.email %> </h4>
-  <%= link_to "ログアウト" , destroy_user_session_path, method: :delete %>
-    <!-- ログアウトをする -->
-<% else %>
-      <!-- ユーザーがログインしていなかった時の処理 -->
-      <h2> 現在ログインしていません </h2>
-      <%= link_to "ログイン" , new_user_session_path, class: 'post' %>
-        <!-- ログイン画面に移行する -->
-        <%= link_to "新規登録" , new_user_registration_path, class: 'post' %>
-          <!-- 新規登録画面に移行する -->
-<% end %>
+        <div class="panel-item col-lg3 col-6">
+          <span>京都</span>
+          <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E4%BA%AC%E9%83%BD">
+            <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_kyoto.jpg" alt="" class="panel-image shadow">
+          </a>
+            <div class="shadow"></div>
+
+        </div>
+
+        <div class="panel-item col-lg3 col-6">
+          <span>札幌</span>
+          <a href="https://presite-potepancamp-rails-02.herokuapp.com/rooms/search?area=%E6%9C%AD%E5%B9%8C">
+            <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/img_sapporo.jpg" alt="" class="panel-image">
+          </a>
+          <div class="shadow"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
